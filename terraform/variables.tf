@@ -24,7 +24,7 @@ variable "ssh_allowed_cidr" {
 variable "instance_type" {
   description = "EC2 instance type"
   type        = string
-  default     = "t2.micro" # free tier eligible
+  default     = "t2.medium"
 }
 
 variable "root_volume_size_gb" {
