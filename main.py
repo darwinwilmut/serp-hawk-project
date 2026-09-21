@@ -3479,12 +3479,7 @@ async def upload_file_to_server(
     if S3_BUCKET:
         s3_key = f"uploads/{unique_name}"
         try:
-            s3 = boto3.client(
-                "s3",
-                region_name=S3_REGION,
-                aws_access_key_id=os.environ.get("AWS_ACCESS_KEY_ID"),
-                aws_secret_access_key=os.environ.get("AWS_SECRET_ACCESS_KEY"),
-            )
+            s3 = boto3.client("s3", region_name=S3_REGION)
             s3.put_object(
                 Bucket=S3_BUCKET,
                 Key=s3_key,

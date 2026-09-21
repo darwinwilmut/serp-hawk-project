@@ -1,17 +1,25 @@
-# Python
+# ── Secrets & Environment ─────────────────────────────────────────────────────
+.env
+*.pem
+
+# ── Python ────────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
-.venv
+*.pyo
+.venv/
 venv/
+venv_app/
 ENV/
 env/
-.env
 
-# Node
+# ── Node / Next.js ────────────────────────────────────────────────────────────
 node_modules/
+frontend/node_modules/
 .next/
+frontend/.next/
 out/
+frontend/out/
 build/
 dist/
 npm-debug.log*
@@ -19,27 +27,44 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# OS
-.DS_Store
-Thumbs.db
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# Project Specific
-static/generated_images/
-*.db
-*.sqlite
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+*.log.*
 logs/
-venv_app/
-venv/
+
+# ── Debug & generated output ──────────────────────────────────────────────────
+debug_out.json
+debug_out.txt
+audit_results.txt
 DEBUG_SCRAPE_FLOW.txt
 last_scrape_debug.txt
 schema_inspect.txt
 health.json
 tmp_check_version.py
 test_*.py
-*.pyc
+
+# ── Uploaded files (served from S3 in production) ────────────────────────────
+static/uploads/*
+!static/uploads/.gitkeep
+
+# ── Data & spreadsheets ───────────────────────────────────────────────────────
+*.xlsx
+*.csv
+*.db
+*.sqlite
+
+# ── Terraform ─────────────────────────────────────────────────────────────────
+terraform/.terraform/
+terraform/terraform.tfstate
+terraform/terraform.tfstate.backup
+terraform/*.tfvars
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
