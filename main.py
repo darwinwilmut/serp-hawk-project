@@ -104,6 +104,7 @@ def _ensure_database_indexes():
         for stmt in stmts:
             conn.execute(text(stmt))
 
+import os
 import boto3
 from botocore.exceptions import ClientError
 
